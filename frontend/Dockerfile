@@ -23,7 +23,7 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Copy the build artifacts from the previous stage
-COPY --from=build frontend/next ./next
+COPY --from=build frontend/.next ./.next
 COPY --from=build frontend/package.json ./
 COPY --from=build frontend/package-lock.json ./
 
