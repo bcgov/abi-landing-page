@@ -2,7 +2,7 @@
 FROM node:20 as build
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /frontend
 
 # Copy package.json and package-lock.json
 COPY package.json package-lock.json* ./
@@ -23,9 +23,9 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Copy the build artifacts from the previous stage
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/package.json ./
-COPY --from=build /app/package-lock.json ./
+COPY --from=build frontend/next ./next
+COPY --from=build frontend/package.json ./
+COPY --from=build frontend/package-lock.json ./
 
 # Install only production dependencies
 RUN npm ci --only=production
