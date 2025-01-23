@@ -1,0 +1,2 @@
+# Ignore all Helm chart files
+**/*.yaml

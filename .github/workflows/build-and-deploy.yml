@@ -63,12 +63,12 @@ jobs:
         uses: redhat-actions/oc-login@v1
         with:
           openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
-          namespace: ${{ github.ref == 'refs/heads/main' && secrets.OPENSHIFT_PROD_NAMESPACE || (github.ref == 'refs/heads/dev' && secrets.OPENSHIFT_DEV_NAMESPACE) || secrets.OPENSHIFT_TEST_NAMESPACE }}
+          namespace: ${{ github.ref_name == 'main' && secrets.OPENSHIFT_PROD_NAMESPACE || (github.ref_name == 'dev' && secrets.OPENSHIFT_DEV_NAMESPACE) || secrets.OPENSHIFT_TEST_NAMESPACE }}
           openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
           insecure_skip_tls_verify: true
 
       - name: Deploy with Helm
         run: |
           helm upgrade --install "landingpage" ./frontend/helm \
-            --set image.repository=${{ secrets.OPENSHIFT_REGISTRY_URL }}/${{ github.ref == 'refs/heads/main' && secrets.OPENSHIFT_PROD_NAMESPACE || github.ref == 'refs/heads/dev' && secrets.OPENSHIFT_DEV_NAMESPACE || github.ref == 'refs/heads/test' && secrets.OPENSHIFT_TEST_NAMESPACE }}/landingpage \
+            --set image.repository=${{ secrets.OPENSHIFT_REGISTRY_URL }}/${{ github.ref_name == 'main' && secrets.OPENSHIFT_PROD_NAMESPACE || github.ref_name == 'dev' && secrets.OPENSHIFT_DEV_NAMESPACE || github.ref_name == 'test' && secrets.OPENSHIFT_TEST_NAMESPACE }}/landingpage \
             --set image.tag=${{ needs.build_and_push.outputs.image_tag }}
