@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: landingpage
+  labels:
+    app.kubernetes.io/name: landingpage
+spec:
+  to:
+    kind: Service
+    name: landingpage
+  port:
+    targetPort: 3000
+  tls:
+    termination: edge

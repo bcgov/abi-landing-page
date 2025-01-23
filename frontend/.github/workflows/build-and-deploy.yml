@@ -1,0 +1,63 @@
+name: Build, Lint, and Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - test
+
+env:
+  OPENSHIFT_REGISTRY_URL: ${{ secrets.OPENSHIFT_REGISTRY_URL }}
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to OpenShift Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.OPENSHIFT_REGISTRY_URL }}
+          username: openshift
+          password: ${{ secrets.OPENSHIFT_TOKEN }}
+
+      - name: Build and push Docker image to OpenShift
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.OPENSHIFT_REGISTRY_URL }}/${{github.ref == 'refs/heads/main' && secrets.OPENSHIFT_PROD_NAMESPACE || github.ref == 'refs/heads/dev' && secrets.OPENSHIFT_DEV_NAMESPACE || github.ref == 'refs/heads/test' && secrets.OPENSHIFT_TEST_NAMESPACE }}/landingpage:${{ github.sha }}
+          labels: ${{ github.sha }}
+
+    outputs:
+      image_tag: ${{ steps.build.outputs.image_tag }}
+
+  deploy:
+    needs: build_and_push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate with OpenShift
+        uses: redhat-actions/oc-login@v1
+        with:
+          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
+          namespace: ${{ github.ref == 'refs/heads/main' && secrets.OPENSHIFT_PROD_NAMESPACE || (github.ref == 'refs/heads/dev' && secrets.OPENSHIFT_DEV_NAMESPACE) || secrets.OPENSHIFT_TEST_NAMESPACE }}
+          openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
+          insecure_skip_tls_verify: true
+
+      - name: Deploy with Helm
+        run: |
+          helm upgrade --install "landingpage" ./frontend/helm \
+            --set image.repository=${{ secrets.OPENSHIFT_REGISTRY_URL }}/${{ github.ref == 'refs/heads/main' && secrets.OPENSHIFT_PROD_NAMESPACE || github.ref == 'refs/heads/dev' && secrets.OPENSHIFT_DEV_NAMESPACE || github.ref == 'refs/heads/test' && secrets.OPENSHIFT_TEST_NAMESPACE }}/landingpage \
+            --set image.tag=${{ needs.build_and_push.outputs.image_tag }}

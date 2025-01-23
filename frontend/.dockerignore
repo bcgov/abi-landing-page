@@ -1,0 +1,17 @@
+# Version control
+.git
+.gitignore
+.vscode
+
+# Exclude Node.js dependencies
+node_modules
+
+# Exclude build output directories
+.next
+
+# Exclude docker-related files
+Dockerfile
+.dockerignore
+
+# Documentation
+README.md
