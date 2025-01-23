@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy to Dev
 
 on:
   push:
@@ -29,22 +29,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata for Docker
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-
       - name: Build and push Docker image to OpenShift
         uses: docker/build-push-action@v5
         with:
           context: ./frontend
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-
-    outputs:
-      image_tag: ${{ steps.meta.outputs.tags }}
+          tags: ${{ github.sha }}
+          labels: ${{ github.sha }}
 
   deploy:
     needs: build_and_push
@@ -63,12 +54,13 @@ jobs:
         uses: redhat-actions/oc-login@v1
         with:
           openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
-          namespace: ${{ github.ref_name == 'main' && secrets.OPENSHIFT_PROD_NAMESPACE || (github.ref_name == 'dev' && secrets.OPENSHIFT_DEV_NAMESPACE) || secrets.OPENSHIFT_TEST_NAMESPACE }}
+          namespace: ${{ secrets.OPENSHIFT_DEV_NAMESPACE }}
           openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
           insecure_skip_tls_verify: true
 
       - name: Deploy with Helm
         run: |
           helm upgrade --install "landingpage" ./frontend/helm \
-            --set image.repository=${{ secrets.OPENSHIFT_REGISTRY_URL }}/${{ github.ref_name == 'main' && secrets.OPENSHIFT_PROD_NAMESPACE || github.ref_name == 'dev' && secrets.OPENSHIFT_DEV_NAMESPACE || github.ref_name == 'test' && secrets.OPENSHIFT_TEST_NAMESPACE }}/landingpage \
-            --set image.tag=${{ needs.build_and_push.outputs.image_tag }}
+            --set image.repository=${{ secrets.OPENSHIFT_REGISTRY_URL }}/${{ secrets.OPENSHIFT_DEV_NAMESPACE }}/landingpage \
+            --set image.tag= ${{ github.sha }}
+            --namespace ${{ secrets.OPENSHIFT_DEV_NAMESPACE }}
