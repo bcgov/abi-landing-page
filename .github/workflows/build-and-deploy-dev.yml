@@ -3,9 +3,7 @@ name: Build and Deploy to Dev
 on:
   push:
     branches:
-      - main
       - dev
-      - test
 
 env:
   REGISTRY: ghcr.io
