@@ -61,4 +61,3 @@ jobs:
           helm upgrade --install "landingpage" ./frontend/helm \
             --set image.repository=${{ secrets.OPENSHIFT_REGISTRY_URL }}/${{ secrets.OPENSHIFT_DEV_NAMESPACE }}/landingpage \
             --set image.tag=${{ github.sha }}
-            --namespace ${{ secrets.OPENSHIFT_DEV_NAMESPACE }}
