@@ -12,6 +12,9 @@ env:
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
       - name: Checkout the repository
@@ -61,3 +64,7 @@ jobs:
           helm upgrade --install "landingpage" ./frontend/helm \
             --set image.repository=${{ secrets.OPENSHIFT_REGISTRY_URL }}/${{ secrets.OPENSHIFT_DEV_NAMESPACE }}/landingpage \
             --set image.tag=${{ github.sha }}
+
+      - name: Trigger OpenShift Rollout
+        run: |
+          oc rollout restart deployment/landingpage
