@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: "OPENSHIFT_REGISTRY_URL/NAMESPACE/landingpage"
-  tag: "IMAGE_TAG"
+  repository: ghcr.io/bcgov/abi-landing-page
+  tag: dev
   pullPolicy: Always
 
 service:
