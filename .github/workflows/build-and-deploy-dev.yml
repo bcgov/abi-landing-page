@@ -70,9 +70,10 @@ jobs:
 
       - name: Deploy with Helm
         run: |
-          helm upgrade --install "landingpage" ./frontend/helm \
-            --set image.repository=${{ secrets.OPENSHIFT_REGISTRY_URL }}/${{ secrets.OPENSHIFT_DEV_NAMESPACE }}/landingpage \
-            --set image.tag=${{ github.sha }}
+          helm upgrade --install landingpage ./frontend/helm \
+            --namespace ${{ secrets.OPENSHIFT_DEV_NAMESPACE }} \
+            --set image.repository=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} \
+            --set image.tag=${{ needs.build_and_push.outputs.image_tag }}
 
       - name: Trigger OpenShift Rollout
         run: |
