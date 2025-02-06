@@ -1,3 +1,5 @@
+@import "@bcgov/bc-sans/css/BCSans.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +17,5 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "BCSans", sans-serif;
 }
