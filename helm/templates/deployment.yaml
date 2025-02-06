@@ -17,6 +17,7 @@ spec:
       containers:
         - name: landingpage
           image: "{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 3000
       restartPolicy: Always
