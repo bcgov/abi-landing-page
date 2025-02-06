@@ -18,7 +18,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
 
-COPY --from=builder /app/frontend/public ./frontend/public
+COPY --from=builder /app/frontend/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 

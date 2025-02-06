@@ -39,7 +39,7 @@ jobs:
       - name: Build and push Docker image to OpenShift
         uses: docker/build-push-action@v5
         with:
-          context: ./frontend
+          context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -70,7 +70,7 @@ jobs:
 
       - name: Deploy with Helm
         run: |
-          helm upgrade --install landingpage ./frontend/helm \
+          helm upgrade --install landingpage ./helm \
             --namespace ${{ secrets.OPENSHIFT_DEV_NAMESPACE }} \
             --set image.repository=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} \
             --set image.tag=${{ needs.build_and_push.outputs.image_tag }}
