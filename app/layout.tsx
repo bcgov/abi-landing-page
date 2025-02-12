@@ -1,27 +1,29 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Link from "next/link";
-import Navbar from "./components/Navbar";
+import type { Metadata } from 'next'
+import './globals.css'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 export const metadata: Metadata = {
-  title: "ABI Landing Page",
-  description: "Analytics and Business Intelligence Landing Page",
-};
+    title: 'ABI Landing Page',
+    description: 'Analytics and Business Intelligence Landing Page',
+}
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        <Link href="/dashboards>">Dashboards</Link>
-        <Link href="/development>">Services</Link>
-        <Link href="/request>">Requests</Link>
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body>
+                <div>
+                    <Header />
+                </div>
+                {children}
+                <div>
+                    <Footer />
+                </div>
+            </body>
+        </html>
+    )
 }
