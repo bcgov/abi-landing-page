@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export default function Home() {
-    const sections = [
+    const categories = [
         {
             title: 'Dashboards',
             description: 'View our analytics dashboards',
@@ -31,19 +31,19 @@ export default function Home() {
                 </p>
             </div>
 
-            {/* Navigation Sections */}
+            {/* Navigation categories */}
             <div className="space-y-6">
-                {sections.map((section, index) => (
+                {categories.map((categories, index) => (
                     <Link
                         key={index}
-                        href={section.href}
+                        href={categories.href}
                         className="block border-b border-bcgov-border pb-4 hover:bg-bcgov-background transition-colors duration-200"
                     >
                         <div className="px-4 py-2">
                             <h2 className="text-xl font-bold text-bcgov-primaryText mb-1">
-                                {section.title}
+                                {categories.title}
                             </h2>
-                            <p>{section.description}</p>
+                            <p>{categories.description}</p>
                         </div>
                     </Link>
                 ))}
