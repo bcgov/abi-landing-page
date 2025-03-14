@@ -10,7 +10,7 @@ export default function Home() {
         {
             title: 'Services',
             description: 'Explore our development services',
-            href: '/development',
+            href: '/services',
         },
         {
             title: 'Requests',

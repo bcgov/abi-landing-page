@@ -4,7 +4,7 @@ import { Header } from '@bcgov/design-system-react-components'
 import React from 'react'
 
 const Navbar = () => {
-    return <Header title="SDD Analytics and Business Intelligence"></Header>
+    return <Header header-menu-button></Header>
 }
 
 export default Navbar

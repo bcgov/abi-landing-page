@@ -11,4 +11,52 @@ export const dashboards = [
         description: 'Description of Service BC',
         url: 'https://app.powerbi.com/groups/me/apps/2a4dd233-cd54-498a-ae35-d2b047740fe5/reports/797b808e-96f8-4466-9fa4-e95398c9188a/ReportSection59e002a292a55e07d705?experience=power-bi',
     },
+    {
+        id: 3,
+        title: 'Leadership Reporting',
+        description: 'Description of Leadership Reporting',
+        url: 'https://app.powerbi.com/groups/me/apps/71b21d17-f991-4d89-926f-7e59c8a02cc2/reports/fd69ba28-0e24-42be-b5fe-24aa59ecddc6/ReportSection470a3717d9560ab33204?experience=power-bi',
+    },
+    {
+        id: 4,
+        title: 'Emergency Management',
+        description: 'Description of Emergency Management',
+        url: 'https://app.powerbi.com/groups/me/apps/15d5c316-9def-42b9-855e-ff84da891617/reports/22da882e-74ac-4470-87c3-bee15aaa5925/ReportSectione9e9a35618d445ccc0d8?experience=power-bi',
+    },
+    {
+        id: 5,
+        title: 'PLMS Dashboard',
+        description: 'Description of PLMS Dashboard',
+        url: 'https://app.powerbi.com/groups/me/apps/b3209eb6-c5eb-4c8e-b09f-871bc019098f/reports/ba014ff3-1269-492b-939c-8ec6e9344ef5/ReportSection24d5e19a2bb906e41392?experience=power-bi',
+    },
+    {
+        id: 6,
+        title: 'SDD Executive Reporting',
+        description: 'Description of SDD Executive Reporting',
+        url: 'https://app.powerbi.com/groups/me/apps/232969c6-ba8a-407b-bafd-79c6e7d0eb6a/reports/dcd0a0cb-ed95-4bdb-92ae-91f6f34d9ae9/ReportSection30b3b18af765e66f7a6e?experience=power-bi',
+    },
+    {
+        id: 7,
+        title: 'Virtual Services',
+        description: 'Description of Virtual Services',
+        url: 'https://app.powerbi.com/groups/me/apps/8a18813f-b135-459f-9451-8e4aebc0b24a/reports/5bd75a07-80b9-42bb-9fec-627fa8547b1a/ReportSection97294ff91effc7bd38b9?experience=power-bi',
+    },
+    {
+        id: 8,
+        title: 'SDD Divisional Reporting',
+        description: 'Description of SDD Divisional Reporting',
+        url: 'https://app.powerbi.com/groups/me/apps/7eab9f64-d995-449d-ac57-542b2e232472/reports/7ec03238-4561-4dea-b170-b64a9a6d479f/ReportSection7eaefb6e4054e89e3ec8?experience=power-bi',
+    },
+    {
+        id: 9,
+        title: 'Strategic Services',
+        description: 'Description of Strategic Services',
+        url: 'https://app.powerbi.com/groups/me/apps/de135bdf-687e-49b7-ab1e-9b34a01cc01e/reports/1321876a-b9b5-42bf-8220-86bec5eeb02f/ReportSectionf9e0faf52d78c3b3cf75?experience=power-bi',
+    },
+    {
+        id: 10,
+        title: 'Community Services',
+        description: 'Description of Community Services',
+        url: 'https://app.powerbi.com/groups/me/apps/1a828297-001f-4b50-bee0-a3ebb3da7817/reports/ccbc68f3-61a7-4099-bd0e-d5787b16362b/54fda5140101be04911e?experience=power-bi',
+    },
 ]
