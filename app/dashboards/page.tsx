@@ -9,18 +9,16 @@ export default function DashboardsPage() {
                 {dashboards.map((dashboard) => (
                     <Link
                         key={dashboard.id}
-                        href={dashboard.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={`/dashboards/${dashboard.slug}`}
                         className="group border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
                     >
                         <div className="p-4">
                             <h3 className="text-lg font-bold text-bcgov-blue font-BCSans mb-2">
                                 {dashboard.title}
                             </h3>
-                            <p className="text-gray-600 font-BCSans">
+                            {/* <p className="text-gray-600 font-BCSans">
                                 {dashboard.description}
-                            </p>
+                            </p> */}
                         </div>
                     </Link>
                 ))}
