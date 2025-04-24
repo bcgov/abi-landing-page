@@ -1,26 +1,28 @@
-import React from 'react'
 import Link from 'next/link'
 import { dashboards } from '@/data/dashboardsData'
+import { Button } from '@/components/ui/button'
 
-export default function DashboardsPage() {
+export default async function DashboardsPage() {
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="container mx-auto px-4 py-8">
+            <h1 className="text-3xl font-bold mb-6">Dashboards</h1>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {dashboards.map((dashboard) => (
-                    <Link
-                        key={dashboard.id}
-                        href={`/dashboards/${dashboard.slug}`}
-                        className="group border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                    <div
+                        key={dashboard.slug}
+                        className="bg-white rounded-lg shadow p-6"
                     >
-                        <div className="p-4">
-                            <h3 className="text-lg font-bold text-bcgov-blue font-BCSans mb-2">
-                                {dashboard.title}
-                            </h3>
-                            {/* <p className="text-gray-600 font-BCSans">
-                                {dashboard.description}
-                            </p> */}
-                        </div>
-                    </Link>
+                        <h2 className="text-xl font-semibold mb-2">
+                            {dashboard.title}
+                        </h2>
+                        <p className="text-gray-600 mb-4">
+                            {dashboard.description}
+                        </p>
+                        <Link href={`/dashboards/${dashboard.slug}`} passHref>
+                            <Button variant="bcgov">View Details</Button>
+                        </Link>
+                    </div>
                 ))}
             </div>
         </div>
