@@ -1,10 +1,10 @@
 'use client'
-import { Header } from '@bcgov/design-system-react-components'
+import { Header as BCGovHeader } from '@bcgov/design-system-react-components'
 
 import React from 'react'
 
-const Navbar = () => {
-    return <Header header-menu-button></Header>
+const Header = () => {
+    return <BCGovHeader header-menu-button></BCGovHeader>
 }
 
-export default Navbar
+export default Header

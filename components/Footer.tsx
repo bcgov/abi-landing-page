@@ -1,10 +1,10 @@
 'use client'
-import { Footer } from '@bcgov/design-system-react-components'
+import { Footer as BCGovFooter } from '@bcgov/design-system-react-components'
 
 import React from 'react'
 
-const Navbar = () => {
-    return <Footer></Footer>
+const Footer = () => {
+    return <BCGovFooter hideAcknowledgement hideLogoAndLinks />
 }
 
-export default Navbar
+export default Footer
