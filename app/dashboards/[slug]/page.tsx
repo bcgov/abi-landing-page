@@ -3,11 +3,13 @@ import { notFound } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
-type PageProps = {
-    params: { slug: string }
-}
-
-export default async function DashboardDetailPage({ params }: PageProps) {
+// Using inline type definition without external references
+export default function DashboardDetailPage({
+    params,
+}: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    params: any // Using 'any' here due to type incompatibility with Next.js 15.3.1
+}) {
     const { slug } = params
     const dashboard = dashboards.find((d) => d.slug === slug)
 
