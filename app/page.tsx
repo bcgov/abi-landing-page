@@ -1,4 +1,12 @@
 import Link from 'next/link'
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+} from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 
 export default function Home() {
     const categories = [
@@ -20,10 +28,17 @@ export default function Home() {
     ]
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8">
+            <h1 className="text-3xl font-bold mb-6">
+                Analytics & Business Intelligence
+            </h1>
+
             {/* Team Summary Section */}
-            <div className="mb-12">
-                <p className="text-bcgov-primaryText mb-2">
+            <div className="mb-8 p-6 bg-blue-50 rounded-xl border border-blue-100">
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+                    Welcome
+                </h2>
+                <p className="text-gray-700 mb-2">
                     Welcome to the Analytics and Business Intelligence team
                     portal. We provide data analytics, business intelligence
                     solutions, and reporting services to support evidence-based
@@ -32,20 +47,30 @@ export default function Home() {
             </div>
 
             {/* Navigation categories */}
-            <div className="space-y-6">
-                {categories.map((categories, index) => (
-                    <Link
+            <h2 className="text-2xl font-semibold mb-4">Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {categories.map((category, index) => (
+                    <Card
                         key={index}
-                        href={categories.href}
-                        className="block border-b border-bcgov-border pb-4 hover:bg-bcgov-background transition-colors duration-200"
+                        className="overflow-hidden hover:shadow-lg transition-all duration-200 border border-gray-200 hover:border-blue-300"
                     >
-                        <div className="px-4 py-2">
-                            <h2 className="text-xl font-bold text-bcgov-primaryText mb-1">
-                                {categories.title}
-                            </h2>
-                            <p>{categories.description}</p>
-                        </div>
-                    </Link>
+                        <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-2"></div>
+                        <CardHeader>
+                            <CardTitle className="text-xl font-semibold text-gray-800">
+                                {category.title}
+                            </CardTitle>
+                            <CardDescription>
+                                {category.description}
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <Link href={category.href} passHref>
+                                <Button variant="bcgov" className="w-full">
+                                    Explore {category.title}
+                                </Button>
+                            </Link>
+                        </CardContent>
+                    </Card>
                 ))}
             </div>
         </div>

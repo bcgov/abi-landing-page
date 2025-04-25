@@ -12,23 +12,25 @@
         "@bcgov/design-system-react-components": "^0.5.1",
         "@emotion/react": "^11.11.0",
         "@emotion/styled": "^11.11.0",
-        "@radix-ui/react-slot": "^1.2.0",
-        "class-variance-authority": "^0.7.1",
+        "@radix-ui/react-slot": "^1.0.2",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
         "next": "^15.3.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "tailwind-merge": "^3.2.0"
+        "tailwind-merge": "^2.2.1",
+        "tailwindcss-animate": "^1.0.7"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
-        "autoprefixer": "^10.4.21",
+        "autoprefixer": "^10.4.16",
         "eslint": "^9",
         "eslint-config-next": "15.1.4",
-        "postcss": "^8.5.3",
-        "tailwindcss": "^3.4.17",
+        "postcss": "^8",
+        "tailwindcss": "^3.4.1",
         "typescript": "^5"
     }
 }
