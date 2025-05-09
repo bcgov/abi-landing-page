@@ -49,7 +49,7 @@ export const dashboards = [
         id: 4,
         portfolio: 'Community Services',
         description:
-            '"The Community Services(CS) Branch delivers in-person programs and services in offices and communities throughout B.C. It encompasses community offices including Ministry offices and Service BC locations across BC and Community Services’ Focus Teams (CSFT) which are dedicated virtual teams within Community Services that complete more complex or specialized work. CSFT include Service BC Support, Self Employment Program (SEP),Change in circumstance (CIC),File review and Administrative Error Underpayments (AEU) , Urgent Crisis Long, ID and Reports teams. Access the analytic dashboards for CS  branch, developed by Analytics and Business Intelligence Team.',
+            'The Community Services(CS) Branch delivers in-person programs and services in offices and communities throughout B.C. It encompasses community offices including Ministry offices and Service BC locations across BC and Community Services’ Focus Teams (CSFT) which are dedicated virtual teams within Community Services that complete more complex or specialized work. CSFT include Service BC Support, Self Employment Program (SEP),Change in circumstance (CIC),File review and Administrative Error Underpayments (AEU) , Urgent Crisis Long, ID and Reports teams. Access the analytic dashboards for CS  branch, developed by Analytics and Business Intelligence Team.',
         slug: 'community-services',
         urls: [
             {
