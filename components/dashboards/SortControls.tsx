@@ -37,15 +37,15 @@ export const SortControls: React.FC<SortControlsProps> = ({
                     A-Z
                 </button>
                 <button
-                    onClick={() => setSortBy('category')}
+                    onClick={() => setSortBy('branch')}
                     className={`px-3 py-1 text-sm rounded-md ${
-                        sortBy === 'category'
+                        sortBy === 'branch'
                             ? 'bg-blue-100 text-blue-800'
                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
-                    aria-pressed={sortBy === 'category'}
+                    aria-pressed={sortBy === 'branch'}
                 >
-                    Category
+                    Branch
                 </button>
             </div>
         </div>

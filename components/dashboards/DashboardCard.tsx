@@ -34,7 +34,7 @@ export const DashboardCard: React.FC<DashboardCardProps> = ({
                         isFeatured ? 'bold' : 'semibold'
                     } mb-2 ${isFeatured ? 'text-blue-700' : 'text-gray-800'}`}
                 >
-                    {dashboard.title}
+                    {dashboard.portfolio}
                 </h3>
                 <div className="flex items-center mb-3">
                     <span
@@ -44,7 +44,7 @@ export const DashboardCard: React.FC<DashboardCardProps> = ({
                                 : 'bg-gray-100 text-gray-700'
                         }`}
                     >
-                        {dashboard.category}
+                        {dashboard.branch}
                     </span>
                 </div>
                 <p

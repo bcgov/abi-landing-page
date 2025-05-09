@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { dashboards } from '@/data/dashboardsData'
 
-export type SortOption = 'default' | 'alphabetical' | 'category'
+export type SortOption = 'default' | 'alphabetical' | 'branch'
 export type Dashboard = (typeof dashboards)[0]
 
 export function useDashboardFilters() {
@@ -14,26 +14,27 @@ export function useDashboardFilters() {
     const filteredDashboards = useMemo(() => {
         let filtered = dashboards.filter((dashboard) => {
             const matchesSearch =
-                dashboard.title
+                dashboard.portfolio
                     .toLowerCase()
                     .includes(searchTerm.toLowerCase()) ||
                 dashboard.description
                     .toLowerCase()
                     .includes(searchTerm.toLowerCase())
             const matchesCategory =
-                selectedCategory === '' ||
-                dashboard.category === selectedCategory
+                selectedCategory === '' || dashboard.branch === selectedCategory
             return matchesSearch && matchesCategory
         })
 
         // Apply sorting
         if (sortBy === 'alphabetical') {
-            return [...filtered].sort((a, b) => a.title.localeCompare(b.title))
-        } else if (sortBy === 'category') {
+            return [...filtered].sort((a, b) =>
+                a.portfolio.localeCompare(b.portfolio)
+            )
+        } else if (sortBy === 'branch') {
             return [...filtered].sort(
                 (a, b) =>
-                    a.category.localeCompare(b.category) ||
-                    a.title.localeCompare(b.title)
+                    a.branch.localeCompare(b.branch) ||
+                    a.portfolio.localeCompare(b.portfolio)
             )
         }
 
