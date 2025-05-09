@@ -23,10 +23,10 @@ export const DashboardList: React.FC<DashboardListProps> = ({ dashboards }) => {
                         <div className="flex-grow mb-4 md:mb-0 md:mr-4">
                             <div className="flex items-center mb-2">
                                 <h2 className="text-xl font-semibold text-gray-800 mr-3">
-                                    {dashboard.title}
+                                    {dashboard.portfolio}
                                 </h2>
                                 <span className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full">
-                                    {dashboard.category}
+                                    {dashboard.branch}
                                 </span>
                             </div>
                             <p className="text-gray-600">

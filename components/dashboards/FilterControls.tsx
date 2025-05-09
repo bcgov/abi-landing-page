@@ -1,6 +1,6 @@
 import React from 'react'
 import { SearchBar } from './SearchBar'
-import { CategoryFilter } from './CategoryFilter'
+import { BranchFilter } from './BranchFilter'
 import { SortControls } from './SortControls'
 import { ViewToggle } from './ViewToggle'
 import { SortOption } from '@/hooks/useDashboardFilters'
@@ -33,7 +33,7 @@ export const FilterControls: React.FC<FilterControlsProps> = ({
                     searchTerm={searchTerm}
                     setSearchTerm={setSearchTerm}
                 />
-                <CategoryFilter
+                <BranchFilter
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
                 />
