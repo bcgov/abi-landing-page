@@ -34,7 +34,7 @@ export default function Home() {
             </h1>
 
             {/* Team Summary Section */}
-            <div className="mb-8 p-6 bg-blue-50 rounded-xl border border-blue-100">
+            <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200">
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800">
                     Welcome
                 </h2>

@@ -2,6 +2,13 @@ import { dashboards } from '@/data/dashboardsData'
 import { notFound } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+} from '@/components/ui/card'
 
 // Using inline type definition without external references
 export default async function DashboardDetailPage({
@@ -19,30 +26,70 @@ export default async function DashboardDetailPage({
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold mb-4">{dashboard.portfolio}</h1>
+            <div className="mb-6">
+                <Link href="/dashboards">
+                    <Button
+                        variant="ghost"
+                        className="mb-2 text-blue-600 -ml-3"
+                    >
+                        ← Back to Dashboards
+                    </Button>
+                </Link>
+            </div>
 
-            <p className="text-lg mb-6">{dashboard.description}</p>
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 mb-8">
+                <h1 className="text-3xl font-bold mb-3 text-gray-800">
+                    {dashboard.portfolio}
+                </h1>
 
-            <div className="space-y-4">
-                <h2 className="text-xl font-semibold">Available Dashboards:</h2>
-                <div className="flex flex-col gap-3">
-                    {dashboard.urls.map((urlItem, index) => (
-                        <Link
-                            key={index}
-                            href={urlItem.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Button
-                                variant="bcgov"
-                                size="lg"
-                                className="w-full sm:w-auto"
-                            >
-                                {urlItem.title}
-                            </Button>
-                        </Link>
-                    ))}
+                <div className="flex items-center mb-4">
+                    <span className="text-sm px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                        {dashboard.branch}
+                    </span>
                 </div>
+
+                <p className="text-gray-700 text-lg">{dashboard.description}</p>
+            </div>
+
+            <h2 className="text-2xl font-semibold mb-6 text-gray-800">
+                Available Dashboards
+            </h2>
+            <p className="text-gray-600 mb-6">
+                Select one of the following dashboard options to explore{' '}
+                {dashboard.portfolio} data
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {dashboard.urls.map((urlItem, index) => (
+                    <Card
+                        key={index}
+                        className="overflow-hidden hover:shadow-lg transition-all duration-200 border border-gray-200 hover:border-blue-300"
+                    >
+                        <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-2"></div>
+                        <CardHeader>
+                            <CardTitle className="text-xl font-semibold text-gray-800">
+                                {urlItem.title}
+                            </CardTitle>
+                            <CardDescription className="text-gray-600">
+                                {dashboard.branch} dashboard
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <Link
+                                href={urlItem.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Button
+                                    variant="bcgov"
+                                    className="w-full hover:shadow-md transition-all duration-200"
+                                >
+                                    View Dashboard
+                                </Button>
+                            </Link>
+                        </CardContent>
+                    </Card>
+                ))}
             </div>
         </div>
     )

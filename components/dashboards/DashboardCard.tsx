@@ -61,7 +61,7 @@ export const DashboardCard: React.FC<DashboardCardProps> = ({
                 </p>
                 <Link href={`/dashboards/${dashboard.slug}`} passHref>
                     <Button variant="bcgov" className="w-full">
-                        {isFeatured ? 'Open Dashboard' : 'View Dashboard'}
+                        Open Portfolio
                     </Button>
                 </Link>
             </div>
