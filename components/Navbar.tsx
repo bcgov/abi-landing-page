@@ -17,7 +17,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-bcgov-blue border-b border-bcgov-gold shadow-sm">
+    <nav className="bg-bcgov-blue border-b border-bcgov-gold shadow-sm" aria-label="Main navigation">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-2">
           {/* Navigation toggle button (always visible but functionally different based on screen size) */}
