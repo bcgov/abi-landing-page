@@ -34,7 +34,7 @@ export const DashboardCard: React.FC<DashboardCardProps> = ({
         >
           {dashboard.portfolio}
         </h3>
-        <div className="flex items-center mb-2">
+        <div className="flex items-center mb-4">
           <span
             className={`text-xs px-2 py-0.5 rounded-full ${
               isFeatured
@@ -45,15 +45,6 @@ export const DashboardCard: React.FC<DashboardCardProps> = ({
             {dashboard.branch}
           </span>
         </div>
-        <p
-          className={`text-gray-600 mb-${isFeatured ? "3" : "4"} ${
-            isFeatured
-              ? "line-clamp-2"
-              : "min-h-[40px] max-h-14 overflow-hidden text-ellipsis"
-          }`}
-        >
-          {dashboard.shortDescription || "Click to view dashboard details"}
-        </p>
         <Link href={`/dashboards/${dashboard.slug}`} passHref>
           <Button variant="bcgov" className="w-full">
             Open Portfolio

@@ -15,13 +15,7 @@ export function useDashboardFilters() {
     let filtered = dashboards.filter((dashboard) => {
       const matchesSearch =
         dashboard.portfolio.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        dashboard.description
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase()) ||
-        (dashboard.shortDescription &&
-          dashboard.shortDescription
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase()));
+        dashboard.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory =
         selectedCategory === "" || dashboard.branch === selectedCategory;
       return matchesSearch && matchesCategory;

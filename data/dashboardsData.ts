@@ -2,7 +2,6 @@ interface Dashboard {
   id: number;
   portfolio: string;
   description: string;
-  shortDescription: string;
   slug: string;
   urls: { title: string; url: string }[];
   branch: string;
@@ -13,8 +12,7 @@ export const dashboards: Dashboard[] = [
     id: 1,
     portfolio: "Intake & EP",
     description:
-      "The Intake Team is responsible for processing and establishing eligibility for income assistance and disability assistance applications. Specialized Intake Team processes applications for youth, correctional facilites inmates, hospitalized clients,  registered and licensed home residents . Employment Planning Team supports the client to obtain sustainable employment by EAW referral to Work BC, ISETS (Indigenous Skills and Employment Training), and other service providers in the community.Access the analytic dashboards for Intake and Employment Planning, developed by Analytics and Business Intelligence Team.",
-    shortDescription: "Short Description",
+      "The Intake Team is responsible for processing and establishing eligibility for income assistance and disability assistance applications. Specialized Intake Team processes applications for youth, correctional facilites inmates, hospitalized clients,  registered and licensed home residents . Employment Planning Team supports the client to obtain sustainable employment by EAW referral to Work BC, ISETS (Indigenous Skills and Employment Training), and other service providers in the community.",
     slug: "intake-ep",
     urls: [
       {
@@ -26,10 +24,9 @@ export const dashboards: Dashboard[] = [
   },
   {
     id: 2,
-    portfolio: "HASS + Bus Pass",
+    portfolio: "HASS & Bus Pass",
     description:
-      "The Health and Specialized Services(HASS) Teams provide health services including processing  Disability applications, provisioning Medical equipment and devices,Medical supplies and nutrition , Medical transportation,Orthoses and bracing and CPAP devices.  The resource team within HASS provides Pacific Blue Cross support,Diet renewals and natal supplements and  assists withHealthy Kids program. The Specialized Services include Case reviews and trusts,OAS and GISSeniors supplement ,Special care facilities and Funeral assistance. HASS also encompasses Bus Pass Program providing subsidized bus passes, bus pass sticker renewal and PWD transportation supplement to eligible clients. Access the analytic dashboards for Health and Specialized Services, developed by Analytics and Business Intelligence Team.",
-    shortDescription: "test",
+      "The Health and Specialized Services(HASS) Teams provide health services including processing  Disability applications, provisioning Medical equipment and devices,Medical supplies and nutrition , Medical transportation,Orthoses and bracing and CPAP devices.  The resource team within HASS provides Pacific Blue Cross support,Diet renewals and natal supplements and  assists withHealthy Kids program. The Specialized Services include Case reviews and trusts,OAS and GISSeniors supplement ,Special care facilities and Funeral assistance. HASS also encompasses Bus Pass Program providing subsidized bus passes, bus pass sticker renewal and PWD transportation supplement to eligible clients.",
     slug: "hass-bus-pass",
     urls: [
       {
@@ -47,8 +44,7 @@ export const dashboards: Dashboard[] = [
     id: 3,
     portfolio: "Contact Centre",
     description:
-      "The Contact Centre Teams handle Inbound/outbound calls with clients, citizens, advocates, and ministry partners,  responds to after hours critical and emergency issues, warrant checks , creates  Provincial queue and process service requests.Access the analytic dashboards for Contact Centre, developed by Analytics and Business Intelligence Team.",
-    shortDescription: "test",
+      "The Contact Centre Teams handle Inbound/outbound calls with clients, citizens, advocates, and ministry partners,  responds to after hours critical and emergency issues, warrant checks , creates  Provincial queue and process service requests.",
     slug: "contact-centre",
     urls: [
       {
@@ -62,8 +58,7 @@ export const dashboards: Dashboard[] = [
     id: 4,
     portfolio: "Community Services",
     description:
-      "The Community Services(CS) Branch delivers in-person programs and services in offices and communities throughout B.C. It encompasses community offices including Ministry offices and Service BC locations across BC and Community Services Focus Teams (CSFT) which are dedicated virtual teams within Community Services that complete more complex or specialized work. CSFT include Service BC Support, Self Employment Program (SEP),Change in circumstance (CIC),File review and Administrative Error Underpayments (AEU) , Urgent Crisis Long, ID and Reports teams. Access the analytic dashboards for CS  branch, developed by Analytics and Business Intelligence Team.",
-    shortDescription: "test",
+      "The Community Services(CS) Branch delivers in-person programs and services in offices and communities throughout B.C. It encompasses community offices including Ministry offices and Service BC locations across BC and Community Services Focus Teams (CSFT) which are dedicated virtual teams within Community Services that complete more complex or specialized work. CSFT include Service BC Support, Self Employment Program (SEP),Change in circumstance (CIC),File review and Administrative Error Underpayments (AEU) , Urgent Crisis Long, ID and Reports teams.",
     slug: "community-services",
     urls: [
       {
@@ -89,8 +84,7 @@ export const dashboards: Dashboard[] = [
     id: 5,
     portfolio: "Prevention and Loss Management Services",
     description:
-      "The Prevention and Loss Management Services (PLMS) Branch delivers services that support the division and ministry objectives by providing a suite of relevant service quality and program integrity services. This includes client service, front-line support, service quality initiatives, and compliance and enforcement activities. Access the analytic dashboards for PLMS branch, developed by Analytics and Business Intelligence Team.",
-    shortDescription: "test",
+      "The Prevention and Loss Management Services (PLMS) Branch delivers services that support the division and ministry objectives by providing a suite of relevant service quality and program integrity services. This includes client service, front-line support, service quality initiatives, and compliance and enforcement activities.",
     slug: "plms-dashboard",
     urls: [
       {
@@ -102,10 +96,9 @@ export const dashboards: Dashboard[] = [
   },
   {
     id: 6,
-    portfolio: "Executive Reporting (SSB)",
+    portfolio: "Executive Reporting",
     description:
-      "The Strategic Services (SS) Branch supports service delivery through planning, technology/systems, training, program communication, and policy and procedure interpretation and implementation.Access the analytic dashboards for SS branch, developed by Analytics and Business Intelligence Team.",
-    shortDescription: "test",
+      "Executive Reporting portfolio encompasses Human Resources(HR), Strategic Services and Divisional reports.  The HR portion focusses on  sharing HR data related to staffing budgets, attrition, hires, transfers, exits and full time equivalent expenditures(FTE Burn)  to Leadership keeping employee's data secure and complying with HR  data standards.The Strategic Services portion  supports Strategic Services Branch  by providing ad hoc reporting on vast topics to support service delivery through planning, technology/systems, training, program communication, and policy and procedure interpretation, implementation and emergency management planning. The Divisional reporting portion provides high level statistics for all Service Delivery Division areas daily, weekly and monthly.",
     slug: "executive-reporting",
     urls: [
       {
@@ -131,8 +124,7 @@ export const dashboards: Dashboard[] = [
     id: 7,
     portfolio: "Community Integration Services Branch",
     description:
-      "The Community Integration Services(CISB) Branch connects with B.C.s most underserved people and supports them with both financial assistance and in navigating the complex social network for services. Community Integration Specialists work collaboratively with community partners and agencies. Access the analytic dashboards for CISB branch, developed by Analytics and Business Intelligence Team.",
-    shortDescription: "test",
+      "The Community Integration Services(CISB) Branch connects with B.C.s most underserved people and supports them with both financial assistance and in navigating the complex social network for services. Community Integration Specialists work collaboratively with community partners and agencies.",
     slug: "cisb",
     urls: [
       {
@@ -146,7 +138,6 @@ export const dashboards: Dashboard[] = [
     id: 8,
     portfolio: "Workforce Optimization",
     description: "Description of Workforce Optimization",
-    shortDescription: "test",
     slug: "workforce-optimization",
     urls: [
       {
@@ -160,7 +151,6 @@ export const dashboards: Dashboard[] = [
     id: 9,
     portfolio: "Provincial Queue",
     description: "Description of Provincial Queue",
-    shortDescription: "test",
     slug: "provincial-queue",
     urls: [
       {
@@ -174,7 +164,6 @@ export const dashboards: Dashboard[] = [
     id: 10,
     portfolio: "No Portfolio",
     description: "Description of No Portfolio",
-    shortDescription: "test",
     slug: "no-portfolio",
     urls: [
       {
