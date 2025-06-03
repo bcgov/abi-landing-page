@@ -34,9 +34,8 @@ export default function Home() {
       </h1>
 
       {/* Team Summary Section */}
-      <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Welcome</h2>
-        <p className="text-gray-700 mb-2">
+      <div className="mb-8 p-6 rounded-xl border border-gray-200">
+        <p className="mb-2">
           Welcome to the Analytics and Business Intelligence team portal. We
           provide data analytics, business intelligence solutions, and reporting
           services to support evidence-based decision making across the
