@@ -63,9 +63,6 @@ export default async function DashboardDetailPage({
               <CardTitle className="text-xl font-semibold text-gray-800">
                 {urlItem.title}
               </CardTitle>
-              <CardDescription className="text-gray-600">
-                {dashboard.branch} dashboard
-              </CardDescription>
             </CardHeader>
             <CardContent>
               <Link

@@ -16,7 +16,7 @@ export const dashboards: Dashboard[] = [
     slug: "intake-ep",
     urls: [
       {
-        title: "Intake Dashboard",
+        title: "SDD Virtual Services",
         url: "https://app.powerbi.com/intake-dashboard",
       },
     ],
@@ -122,7 +122,7 @@ export const dashboards: Dashboard[] = [
   },
   {
     id: 7,
-    portfolio: "Community Integration Services Branch",
+    portfolio: "Community Integration Services",
     description:
       "The Community Integration Services(CISB) Branch connects with B.C.s most underserved people and supports them with both financial assistance and in navigating the complex social network for services. Community Integration Specialists work collaboratively with community partners and agencies.",
     slug: "cisb",
@@ -162,9 +162,9 @@ export const dashboards: Dashboard[] = [
   },
   {
     id: 10,
-    portfolio: "No Portfolio",
-    description: "Description of No Portfolio",
-    slug: "no-portfolio",
+    portfolio: "Miscellaneous",
+    description: "Description of Miscellaneous",
+    slug: "miscellaneous",
     urls: [
       {
         title: "General Dashboard",
