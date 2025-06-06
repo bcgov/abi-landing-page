@@ -132,7 +132,7 @@ export const dashboards: Dashboard[] = [
         url: "https://app.powerbi.com/cisb-dashboard",
       },
     ],
-    branch: "Community Integration Services Branch",
+    branch: "Community Integration Services",
   },
   {
     id: 8,
