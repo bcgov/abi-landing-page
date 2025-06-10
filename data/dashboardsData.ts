@@ -17,7 +17,7 @@ export const dashboards: Dashboard[] = [
     urls: [
       {
         title: "SDD Virtual Services",
-        url: "https://app.powerbi.com/intake-dashboard",
+        url: "https://app.powerbi.com/groups/me/apps/8a18813f-b135-459f-9451-8e4aebc0b24a/reports/5bd75a07-80b9-42bb-9fec-627fa8547b1a/ReportSection97294ff91effc7bd38b9?experience=power-bi",
       },
     ],
     branch: "Virtual Services",
@@ -31,7 +31,7 @@ export const dashboards: Dashboard[] = [
     urls: [
       {
         title: "SDD Virtual Services",
-        url: "https://app.powerbi.com/sdd-virtual-services",
+        url: "https://app.powerbi.com/groups/me/apps/8a18813f-b135-459f-9451-8e4aebc0b24a/reports/5bd75a07-80b9-42bb-9fec-627fa8547b1a/ReportSection97294ff91effc7bd38b9?experience=power-bi",
       },
       {
         title: "SDD Bus Pass",
@@ -63,15 +63,15 @@ export const dashboards: Dashboard[] = [
     urls: [
       {
         title: "SDD Community Services",
-        url: "https://app.powerbi.com/sdd-community-services",
+        url: "https://app.powerbi.com/groups/me/apps/1a828297-001f-4b50-bee0-a3ebb3da7817/reports/ccbc68f3-61a7-4099-bd0e-d5787b16362b/54fda5140101be04911e?experience=power-bi",
       },
       {
         title: "Service BC",
-        url: "https://app.powerbi.com/service-bc",
+        url: "https://app.powerbi.com/groups/me/apps/2a4dd233-cd54-498a-ae35-d2b047740fe5/reports/797b808e-96f8-4466-9fa4-e95398c9188a/ReportSection59e002a292a55e07d705?experience=power-bi",
       },
       {
         title: "SDD Work Coordination",
-        url: "https://app.powerbi.com/sdd-work-coordination",
+        url: "https://app.powerbi.com/groups/me/apps/08daa67e-e52d-461b-b90a-4ce5b12de96f/reports/b37e4632-e8e9-491a-8d48-f898d2388e3d/ReportSection5457459ff9c8a9a2f697?experience=power-bi",
       },
       {
         title: "SDD Annual Earnings",
@@ -89,7 +89,7 @@ export const dashboards: Dashboard[] = [
     urls: [
       {
         title: "PLMS Dashboard",
-        url: "https://app.powerbi.com/plms-dashboard",
+        url: "https://app.powerbi.com/groups/me/apps/b3209eb6-c5eb-4c8e-b09f-871bc019098f/reports/ba014ff3-1269-492b-939c-8ec6e9344ef5/ReportSectionbbae3a58b782c85cc696?experience=power-bi",
       },
     ],
     branch: "PLMS",
@@ -115,7 +115,7 @@ export const dashboards: Dashboard[] = [
       },
       {
         title: "SDD Executive Reporting",
-        url: "https://app.powerbi.com/sdd-executive-reporting",
+        url: "https://app.powerbi.com/groups/me/apps/232969c6-ba8a-407b-bafd-79c6e7d0eb6a/reports/dcd0a0cb-ed95-4bdb-92ae-91f6f34d9ae9/ReportSection30b3b18af765e66f7a6e?experience=power-bi",
       },
     ],
     branch: "Executive",
