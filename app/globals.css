@@ -1,3 +1,9 @@
+@import "@bcgov/bc-sans/css/BCSans.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "BCSans", sans-serif;
+}
